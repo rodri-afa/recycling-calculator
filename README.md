@@ -1,8 +1,18 @@
-# Nuxt 3 Minimal Starter
+# Recycling Calculator
+
+In Quebec, recycling deposits are a system implemented to encourage the recycling of cans and bottles. When consumers purchase beverages like soda, water, or beer in cans or bottles, they pay an additional deposit fee at the point of sale:
+
+- Cans >473 ml (big cans): 20¢
+- Cans <473 ml (small cans): 5¢
+- Plastic bottles 0.5l - 1l (small plastic bottles): 5¢
+- Plastic bottles 2l (big plastic bottles): 5¢
+- Crystal bottles (big plastic bottles): 10¢
+
+## Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+### Setup
 
 Make sure to install the dependencies:
 
@@ -17,7 +27,7 @@ pnpm install
 yarn install
 ```
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -32,7 +42,7 @@ pnpm run dev
 yarn dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 

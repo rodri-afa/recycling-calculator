@@ -5,7 +5,7 @@
 
         <div class="card">
 
-            <h2>Total: <b>${{ total }} CAD</b></h2>
+            <h2>Total: <br> ${{ total }} CAD</h2>
 
 
             <fieldset>
