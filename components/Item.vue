@@ -32,7 +32,7 @@ defineEmits(['update:itemUds', 'increaseBy'])
 
         &>* {
             height: 32px;
-            border: 1px solid;
+            border: 1px solid #aeaeae;
         }
 
         button {
@@ -45,8 +45,9 @@ defineEmits(['update:itemUds', 'increaseBy'])
             display: flex;
             justify-content: center;
             align-items: baseline;
+            color: black;
 
-            &:hover {
+            border &:hover {
                 cursor: pointer;
             }
         }
