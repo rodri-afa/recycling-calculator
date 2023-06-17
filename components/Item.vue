@@ -3,7 +3,7 @@
         <label :for="name">{{ labelText }}:</label>
         <div class="input-group">
             <button @click.prevent="$emit('increaseBy', -1, item)"> - </button>
-            <input type="numbers" :name="name" step="1" min="0" :value="itemUds"
+            <input type="tel" :name="name" step="1" min="0" :value="itemUds"
                 @input="$emit('update:itemUds', $event.target.value)">
             <button @click.prevent="$emit('increaseBy', 1, item)"> + </button>
         </div>
