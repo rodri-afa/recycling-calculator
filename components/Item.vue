@@ -28,6 +28,7 @@ defineEmits(['update:itemUds', 'increaseBy'])
 
     .input-group {
         display: flex;
+        justify-content: space-between;
         gap: 8px;
 
         &>* {
@@ -38,12 +39,12 @@ defineEmits(['update:itemUds', 'increaseBy'])
         button {
             font-family: 'ui-sans-serif', san-serif;
             border-radius: 50%;
-            width: 50px;
+            width: 48px;
             font-weight: 500;
             font-size: 24px;
             display: flex;
             justify-content: center;
-            align-items: baseline;
+            align-items: center;
             color: black;
 
             border &:hover {
@@ -53,8 +54,9 @@ defineEmits(['update:itemUds', 'increaseBy'])
 
         input[type=number] {
             padding: 0 16px;
-            border-radius: 16px;
-            width: 88%;
+            border-radius: 30px;
+            width: auto;
+            flex: 1;
 
         }
     }

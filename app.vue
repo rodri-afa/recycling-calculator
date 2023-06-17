@@ -102,7 +102,7 @@ h2 {
 
 .card {
     min-height: 90vh;
-    padding: 24px;
+    padding: 12px;
     background-color: white;
     border-radius: 24px 24px 0 0;
     filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
