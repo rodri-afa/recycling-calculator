@@ -34,7 +34,7 @@ defineEmits(['update:itemUds', 'increaseBy'])
         &>* {
             height: 48px;
             border: 1px solid #aeaeae;
-            font-size: 24px;
+            font-size: 16px;
         }
 
         button {
