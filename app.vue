@@ -1,54 +1,26 @@
 <template>
     <main>
-        <h1>Recycling Calculator ♻️</h1>
-        <h2>Total: <b>${{ total }} CAD</b></h2>
-        <!-- <fieldset>
-            <legend>🥫 Cans</legend>
-            <label for="smallCan">Small Cans:</label> <br>
-            <div>
-                <button @click="objects.smallCan.uds--"> - </button>
-                <input type="number" name="smallCan" id="smallCan" step="1" min="0" v-model="objects.smallCan.uds">
-                <button @click="objects.smallCan.uds++"> + </button>
-            </div>
+        <h1>♻️ Recycling Calculator </h1>
+        <!-- <p>Quebec recycling system</p> -->
 
-            <label for="bigCan">Big Cans:</label><br>
-            <div>
-                <button @click="objects.bigCan.uds--"> - </button>
-                <input type="number" name="bigCan" id="bigCan" step="1" min="0" v-model="objects.bigCan.uds">
-                <button @click="objects.bigCan.uds++"> + </button>
-            </div>
-        </fieldset>
+        <div class="card">
 
-        <fieldset>
-            <legend>🍾 Bottles</legend>
-            <label for="smallPlasticBottle">Small Plastic Bottle:</label><br>
-            <div>
-                <button @click="objects.smallPlasticBottle.uds--"> - </button>
-                <input type="number" name="smallPlasticBottle" id="smallPlasticBottle" step="1" min="0"
-                    v-model="objects.smallPlasticBottle.uds">
-                <button @click="objects.smallPlasticBottle.uds++"> + </button>
-            </div>
-            <label for="bigPlasticBottle">Big Plastic Bottle:</label><br>
-            <div>
-                <button @click="objects.bigPlasticBottle.uds--"> - </button>
-                <input type="number" name="bigPlasticBottle" id="bigPlasticBottle" step="1" min="0"
-                    v-model="objects.bigPlasticBottle.uds">
-                <button @click="objects.bigPlasticBottle.uds++"> + </button>
-            </div>
-            <label for="crystalBottle">Crystal Bottle:</label><br>
-            <div>
-                <button @click="objects.crystalBottle.uds--"> - </button>
-                <input type="number" name="crystalBottle" id="crystalBottle" step="1" min="0"
-                    v-model="objects.crystalBottle.uds">
-                <button @click="objects.crystalBottle.uds++"> + </button>
-            </div>
-        </fieldset> -->
+            <h2>Total: <b>${{ total }} CAD</b></h2>
 
-        <p>Quebec recycling system</p>
 
-        <Item v-for="o, key in objects" :labelText="o.labelText" :name="key" v-model:itemUds="o.uds"
-            @increase-by="increaseUds">
-        </Item>
+            <fieldset>
+                <legend>Cans</legend>
+                <Item v-for="c, key in cans" :labelText="c.labelText" :name="key" :item="c" v-model:itemUds="c.uds"
+                    @increase-by="increaseUds">
+                </Item>
+            </fieldset>
+            <fieldset>
+                <legend>Bottles</legend>
+                <Item v-for="b, key in bottles" :labelText="b.labelText" :name="key" :item="b" v-model:itemUds="b.uds"
+                    @increase-by="increaseUds">
+                </Item>
+            </fieldset>
+        </div>
 
     </main>
 </template>
@@ -58,7 +30,7 @@ import { reactive, computed } from 'vue'
 
 
 
-const objects = reactive({
+const cans = reactive({
     smallCan: {
         labelText: "Small Cans",
         uds: 0,
@@ -68,7 +40,9 @@ const objects = reactive({
         labelText: "Big Cans",
         uds: 0,
         price: 0.2
-    },
+    }
+})
+const bottles = reactive({
     smallPlasticBottle: {
         labelText: "Small Plastic Bottle",
         uds: 0,
@@ -86,25 +60,67 @@ const objects = reactive({
     },
 })
 
-function increaseUds(amount, name) {
-    if (objects[name].uds === 0 && amount === -1) {
-        objects[name].uds = 0
+function increaseUds(amount, item) {
+    if (item.uds === 0 && amount === -1) {
+        item.uds = 0
     } else {
-        objects[name].uds = Number(objects[name].uds) + amount
+        item.uds = Number(item.uds) + amount
     }
-
+    // console.log(amount, item);
 
 }
 
 const total = computed(() => {
     let sum = 0
 
-    for (let o in objects) {
-        sum = sum + objects[o]['uds'] * objects[o]['price']
+    for (let c in cans) {
+        sum = sum + cans[c]['uds'] * cans[c]['price']
     }
-    console.log(sum)
+    for (let b in bottles) {
+        sum = sum + bottles[b]['uds'] * bottles[b]['price']
+    }
+    // console.log(sum)
     return sum.toFixed(2)
 })
 
-
 </script>
+
+<style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;800&family=Raleway:wght@400;500;700&display=swap');
+
+
+
+h1 {
+    font-size: 32px;
+}
+
+
+h2 {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.card {
+    min-height: 90vh;
+    padding: 24px;
+    background-color: white;
+    border-radius: 24px 24px 0 0;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+    margin-top: 24px;
+}
+
+fieldset {
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+
+    legend {
+        margin-left: 12px;
+        padding: 0 8px;
+        text-transform: uppercase;
+        font-family: 'Raleway', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
+</style>
