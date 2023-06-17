@@ -46,6 +46,7 @@ defineEmits(['update:itemUds', 'increaseBy'])
             justify-content: center;
             align-items: center;
             color: black;
+            touch-action: manipulation;
 
             border &:hover {
                 cursor: pointer;
