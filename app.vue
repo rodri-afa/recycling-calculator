@@ -4,8 +4,8 @@
         <!-- <p>Quebec recycling system</p> -->
 
         <div class="card">
-
-            <h2>Total: <br> ${{ total }} CAD</h2>
+            <h2 class="title">total</h2>
+            <h2 class="amount"> ${{ total }} CAD</h2>
 
 
             <fieldset>
@@ -92,12 +92,26 @@ const total = computed(() => {
 
 h1 {
     font-size: 28px;
+    text-align: center;
 }
 
 
 h2 {
-    margin-bottom: 24px;
+    &.title {
+        font-family: 'Raleway', sans-serif;
+        font-size: 10px;
+        text-decoration: underline;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    &.amount {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
     text-align: center;
+
 }
 
 .card {
