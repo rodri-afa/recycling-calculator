@@ -91,7 +91,7 @@ const total = computed(() => {
 
 
 h1 {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 
