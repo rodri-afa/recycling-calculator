@@ -31,15 +31,14 @@ defineEmits(['update:itemUds', 'increaseBy'])
         gap: 8px;
 
         &>* {
-            height: 32px;
+            height: 48px;
             border: 1px solid #aeaeae;
         }
 
         button {
             font-family: 'ui-sans-serif', san-serif;
             border-radius: 50%;
-            width: 34px;
-            height: 32px;
+            width: 50px;
             font-weight: 500;
             font-size: 24px;
             display: flex;
