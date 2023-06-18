@@ -49,7 +49,8 @@ defineEmits(['update:itemUds', 'increaseBy'])
             color: black;
             touch-action: manipulation;
 
-            border &:hover {
+            &:hover {
+                border: 1px solid black;
                 cursor: pointer;
             }
         }

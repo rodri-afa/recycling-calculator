@@ -7,6 +7,10 @@
             <h2 class="title">total</h2>
             <h2 class="amount"> ${{ total }} CAD</h2>
 
+            <button id="reset-button" @click="reset">
+                <Icon name="ph:arrows-counter-clockwise" size="24" />
+            </button>
+
 
             <fieldset>
                 <legend>Cans</legend>
@@ -83,6 +87,10 @@ const total = computed(() => {
     return sum.toFixed(2)
 })
 
+function reset() {
+    console.log('reset')
+}
+
 </script>
 
 <style scoped lang="scss">
@@ -121,6 +129,7 @@ h2 {
     border-radius: 24px 24px 0 0;
     filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
     margin-top: 24px;
+    position: relative;
 }
 
 fieldset {
@@ -135,6 +144,26 @@ fieldset {
         font-family: 'Raleway', sans-serif;
         font-size: 12px;
         font-weight: 600;
+    }
+}
+
+#reset-button {
+    background: transparent;
+    color: #aeaeae;
+    border: 1px solid #aeaeae;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+
+    &:hover {
+        color: black;
+        border: 1px solid black;
+        cursor: pointer;
+
     }
 }
 </style>
