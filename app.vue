@@ -89,6 +89,12 @@ const total = computed(() => {
 
 function reset() {
     console.log('reset')
+    for (let c in cans) {
+        cans[c]['uds'] = 0
+    }
+    for (let b in bottles) {
+        bottles[b]['uds'] = 0
+    }
 }
 
 </script>
