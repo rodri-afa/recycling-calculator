@@ -1,4 +1,4 @@
-<template>
+<template id="app">
     <main>
         <h1>♻️ Recycling Calculator </h1>
         <!-- <p>Quebec recycling system</p> -->
@@ -24,6 +24,11 @@
                     @increase-by="increaseUds">
                 </Item>
             </fieldset>
+            <div class="button-center">
+                <p>If you found this useful, please consider:</p>
+                <a id="bmac-button" href="https://www.buymeacoffee.com/rscode"><img
+                        src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=rscode&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff" /></a>
+            </div>
         </div>
 
     </main>
@@ -102,8 +107,13 @@ function reset() {
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;800&family=Raleway:wght@400;500;700&display=swap');
 
+
+
 main {
     padding-top: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -131,13 +141,17 @@ h2 {
 }
 
 .card {
-    min-height: 90vh;
+    // min-height: 90vh;
     padding: 12px;
     background-color: white;
     border-radius: 24px 24px 0 0;
     filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
     margin-top: 24px;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 fieldset {
@@ -176,6 +190,15 @@ fieldset {
         border: 1px solid black;
         cursor: pointer;
 
+    }
+}
+
+.button-center {
+    padding: 12px 0;
+    text-align: center;
+
+    #bmac-button {
+        margin: 12px auto 0;
     }
 }
 </style>
