@@ -102,7 +102,9 @@ function reset() {
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;800&family=Raleway:wght@400;500;700&display=swap');
 
-
+main {
+    padding-top: 12px;
+}
 
 h1 {
     font-size: 28px;
@@ -150,6 +152,10 @@ fieldset {
         font-family: 'Raleway', sans-serif;
         font-size: 12px;
         font-weight: 600;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
     }
 }
 
