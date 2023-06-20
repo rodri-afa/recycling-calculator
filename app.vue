@@ -26,8 +26,8 @@
             </fieldset>
             <div class="button-center">
                 <p>If you found this useful, please consider:</p>
-                <a id="bmac-button" href="https://www.buymeacoffee.com/rscode"><img
-                        src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=rscode&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff" /></a>
+                <a id="bmac-button" href="https://www.buymeacoffee.com/rscode" target="_blank"><img
+                        src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=rscode&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
             </div>
         </div>
 
@@ -40,16 +40,16 @@ import { reactive, computed } from 'vue'
 
 
 const cans = reactive({
+    bigCan: {
+        labelText: "Big Cans",
+        uds: 0,
+        price: 0.2
+    },
     smallCan: {
         labelText: "Small Cans",
         uds: 0,
         price: 0.05
     },
-    bigCan: {
-        labelText: "Big Cans",
-        uds: 0,
-        price: 0.2
-    }
 })
 const bottles = reactive({
     smallPlasticBottle: {
@@ -58,7 +58,7 @@ const bottles = reactive({
         price: 0.05
     },
     bigPlasticBottle: {
-        labelText: "Small Plastic Bottle",
+        labelText: "Big Plastic Bottle",
         uds: 0,
         price: 0.05
     },
