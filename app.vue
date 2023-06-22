@@ -62,10 +62,15 @@ const bottles = reactive({
         uds: 0,
         price: 0.05
     },
-    crystalBottle: {
-        labelText: "Crystal Bottle",
+    smallCrystalBottle: {
+        labelText: "Small Crystal Bottle",
         uds: 0,
         price: 0.1
+    },
+    bigCrystalBottle: {
+        labelText: "Big Crystal Bottle",
+        uds: 0,
+        price: 0.2
     },
 })
 
